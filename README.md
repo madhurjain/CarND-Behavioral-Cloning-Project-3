@@ -49,7 +49,7 @@ Initially, the data captured included the car driving only in the forward direct
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 64).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 66).
 
 #### 4. Appropriate training data
 
@@ -67,7 +67,7 @@ When the model was run in the simulator, the car drove towards the edge of the r
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 45-62) consisted of a convolution neural network with the following layers and layer sizes.
+The final model architecture (model.py lines 45-64) consisted of a convolution neural network with the following layers and layer sizes.
 
 | Layer         		|     Description	        					          | 
 |:-----------------:|:-------------------------------------------:| 
@@ -80,8 +80,10 @@ The final model architecture (model.py lines 45-62) consisted of a convolution n
 | Convolution 3x3   | ReLU activation                             |
 | Convolution 3x3   | ReLU activation                             |
 | Flatten		        |                    			        						|
+| Dropout  	        | Rate = 0.1                                  |
 | Dense 100	        | 		                                        |
 | Dense 50	        | 		                                        |
+| Dropout  	        | Rate = 0.1                                  |
 | Dense 10	        | 		                                        |
 | Dense 1	          | 		                                        |
 
@@ -102,4 +104,9 @@ After the collection process, I had _7566_ data points. I then preprocessed this
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as evidenced by increasing loss beyond that point. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 8 as evidenced by increasing loss beyond that point. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+#### Revision History
+
+8/28/2017 - Added 2 dropout layers and increased the number of epochs to 8. This helped reduce the loss. Car drives wavy at the speed of 30.
+8/27/2017 - Used the default nVidia CNN model without any dropout and trained for 3 epochs. Car drives smoothly at the speed of 20.
