@@ -108,5 +108,5 @@ I used this training data for training the model. The validation set helped dete
 
 #### Revision History
 
-8/28/2017 - Added 2 dropout layers and increased the number of epochs to 8. This helped reduce the loss. Car drives wavy at the speed of 30.
-8/27/2017 - Used the default nVidia CNN model without any dropout and trained for 3 epochs. Car drives smoothly at the speed of 20.
+- 8/28/2017 - Added 2 dropout layers and increased the number of epochs to 8. This helped reduce the loss. Car drives wavy at the speed of 30.
+- 8/27/2017 - Used the default nVidia CNN model without any dropout and trained for 3 epochs. Car drives smoothly at the speed of 20.
